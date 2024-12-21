@@ -1,52 +1,150 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>圣诞快乐，亲爱的！</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            background-color: #0a2d44;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: white;
-        }
+      body {
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        font-family: "Microsoft YaHei", Arial, sans-serif;
+      }
 
-        .tree {
-            color: #2ecc71;
-            font-family: monospace;
-            font-size: 20px;
-            text-align: center;
-            white-space: pre;
-        }
+      .tree {
+        color: #2ecc71;
+        font-family: monospace;
+        font-size: 20px;
+        text-align: center;
+        white-space: pre;
+      }
 
-        .message {
-            margin-top: 30px;
-            font-size: 24px;
-            color: #ff69b4;
-            text-align: center;
+      .message {
+        margin-top: 30px;
+        font-size: 32px;
+        font-family: "Ma Shan Zheng", cursive;
+        text-align: center;
+        line-height: 1.8;
+        position: relative;
+      }
+
+      .message-main {
+        background: linear-gradient(45deg, #ff4757, #ff6b81, #ff4757);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: gradient 3s ease infinite;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+      }
+
+      .message-sub {
+        font-size: 28px;
+        margin-top: 15px;
+        color: #ff6b81;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
         }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .decoration {
+        margin: 20px 0;
+        max-width: 300px;
+        height: auto;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .heart {
+        display: inline-block;
+        animation: heartbeat 1.5s ease-in-out infinite;
+        color: #ff4757;
+        font-size: 36px;
+        text-shadow: 0 0 10px rgba(255, 71, 87, 0.3);
+      }
+
+      @keyframes heartbeat {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .message::before,
+      .message::after {
+        content: "❄";
+        position: absolute;
+        font-size: 24px;
+        color: #70a1ff;
+        animation: snow 3s ease-in-out infinite;
+      }
+
+      .message::before {
+        left: -30px;
+        top: 0;
+      }
+
+      .message::after {
+        right: -30px;
+        top: 0;
+      }
+
+      @keyframes snow {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(10px) rotate(180deg);
+        }
+        100% {
+          transform: translateY(0) rotate(360deg);
+        }
+      }
     </style>
-</head>
-<body>
-    <div class="tree">
-        *
-       ***
-      *****
-     *******
-    *********
-   ***********
-  *************
-        |
-    </div>
+  </head>
+  <body>
+    <img src="img/tree.webp" alt="圣诞装饰" class="decoration" />
     <div class="message">
-        亲爱的，圣诞快乐！<br>
-        我永远爱你 ❤️
+      <div class="message-main">亲爱的，圣诞快乐！</div>
+      <div class="message-sub">我永远爱你 <span class="heart">❤️</span></div>
     </div>
-</body>
+  </body>
 </html>
